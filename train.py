@@ -19,7 +19,7 @@ print("##=============================================##")
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', choices=['CIFAR10', 'CIFAR100'], type=str, default='CIFAR10')             # select dataset
-parser.add_argument('--model', choices=['ResNet18', 'VGG'], type=str, default='ResNet18')                    # select model
+parser.add_argument('--model', choices=['ResNet18'], type=str, default='ResNet18')                    # select model
 parser.add_argument('--non-iid', action='store_true', default=False)                                       # activate if use heterogeneous dataset 
 parser.add_argument('--split-rule', choices=['Dirichlet', 'Pathological'], type=str, default='Dirichlet')  # select the dataset splitting rule
 parser.add_argument('--split-coef', default=0.1, type=float)                                                 # --> if Dirichlet: select the Dirichlet coefficient (i.e. 0.1, 0.3, 0.6, 1)

@@ -180,12 +180,12 @@ class DatasetObject:
                         break
             ###     
             
-            if self.rule == 'Dirichlet' or self.rule == 'Path':
+            if self.rule == 'Dirichlet' or self.rule == 'Pathological':
                 if self.rule == 'Dirichlet':
                     cls_priors = np.random.dirichlet(alpha=[self.rule_arg]*self.n_cls,size=self.n_client)
                     # np.save("results/heterogeneity_distribution_{:s}.npy".format(self.dataset), cls_priors)
                     prior_cumsum = np.cumsum(cls_priors, axis=1)
-                elif self.rule == 'Path':
+                elif self.rule == 'Pathological':
                     c = int(self.rule_arg)
                     a = np.ones([self.n_client,self.n_cls])
                     a[:,c::] = 0
