@@ -4,28 +4,29 @@ import torch.nn as nn
 import torchvision.models as models
 
 class client_model(nn.Module):
-    def __init__(self, name, args=True):
+    def __init__(self, name, n_cls, args=True):
         super(client_model, self).__init__()
         self.name = name
+        self.n_cls = n_cls
         
         if self.name == 'Linear':
             [self.n_dim, self.n_out] = args
             self.fc = nn.Linear(self.n_dim, self.n_out)
           
         if self.name == 'mnist_2NN':
-            self.n_cls = 10
+            # self.n_cls = 10
             self.fc1 = nn.Linear(1 * 28 * 28, 200)
             self.fc2 = nn.Linear(200, 200)
             self.fc3 = nn.Linear(200, self.n_cls)
             
         if self.name == 'emnist_NN':
-            self.n_cls = 10
+            # self.n_cls = 10
             self.fc1 = nn.Linear(1 * 28 * 28, 100)
             self.fc2 = nn.Linear(100, 100)
             self.fc3 = nn.Linear(100, self.n_cls)
         
         if self.name == 'LeNet':
-            self.n_cls = 10
+            # self.n_cls = 10
             self.conv1 = nn.Conv2d(in_channels=3, out_channels=64 , kernel_size=5)
             self.conv2 = nn.Conv2d(in_channels=64, out_channels=64, kernel_size=5)
             self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
@@ -35,7 +36,7 @@ class client_model(nn.Module):
             
         if self.name == 'ResNet18':
             resnet18 = models.resnet18()
-            resnet18.fc = nn.Linear(512, 10)
+            resnet18.fc = nn.Linear(512, self.n_cls)
 
             # Change BN to GN 
             resnet18.bn1 = nn.GroupNorm(num_groups = 2, num_channels = 64)

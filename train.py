@@ -53,7 +53,12 @@ parser.add_argument('--method', choices=['FedAvg', 'FedCM', 'FedDyn', 'SCAFFOLD'
                                          'FedSpeed'], type=str, default='FedAvg')
                                          
 args = parser.parse_args()
-# print(args)
+print(args)
+
+torch.manual_seed(args.seed)
+torch.cuda.manual_seed_all(args.seed)
+np.random.seed(args.seed)
+torch.backends.cudnn.deterministic = True
 
 if torch.cuda.is_available():
     device = torch.device(args.cuda)
@@ -70,10 +75,18 @@ if __name__=='__main__':
         data_obj = DatasetObject(dataset=args.dataset, n_client=args.total_client, seed=args.seed, unbalanced_sgm=0, rule=args.split_rule,
                                      rule_arg=args.split_coef, data_path=args.data_file)
         print("Initialize the Dataset     --->  {:s} {:s}-{:s} {:d} clients".format(args.dataset, args.split_rule, str(args.split_coef), args.total_client))
-  
+    
 
     ### Generate Model Function
-    model_func = lambda: client_model(args.model)
+    if args.dataset == 'CIFAR10':
+        classes = 10
+    elif args.dataset == 'CIFAR100':
+        classes = 100
+    else:
+        raise NotImplementedError('not implemented dataset yet')
+
+    ### Generate Model Function
+    model_func = lambda: client_model(args.model, classes)
     print("Initialize the Model Func  --->  {:s} model".format(args.model))
     init_model = model_func()
     total_trainable_params = sum(p.numel() for p in init_model.parameters() if p.requires_grad)
