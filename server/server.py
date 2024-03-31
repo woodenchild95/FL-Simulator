@@ -136,7 +136,7 @@ class Server(object):
     
     def _save_results_(self):
         # save results.npy
-        options = '' # use '-' at first if non-empty
+        options = '' # write your own saving configs
 
         root = '{:s}/T={:d}'.format(self.args.out_file, self.args.comm_rounds)
         if not os.path.exists(root):
@@ -181,7 +181,7 @@ class Server(object):
         pass
     
     
-    def postprocess(self, client):
+    def postprocess(self, client, received_vecs):
         pass
         
     
@@ -207,7 +207,7 @@ class Server(object):
                 self.received_vecs = _edge_device.train()
                 self.clients_updated_params_list[client] = self.received_vecs['local_update_list']
                 self.clients_params_list[client] = self.received_vecs['local_model_param_list']
-                self.postprocess(client)
+                self.postprocess(client, self.received_vecs)
                 
                 # release the salloc
                 del _edge_device

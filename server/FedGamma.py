@@ -3,9 +3,9 @@ from client import *
 from .server import Server
 
 
-class SCAFFOLD(Server):
+class FedGamma(Server):
     def __init__(self, device, model_func, init_model, init_par_list, datasets, method, args):   
-        super(SCAFFOLD, self).__init__(device, model_func, init_model, init_par_list, datasets, method, args)
+        super(FedGamma, self).__init__(device, model_func, init_model, init_par_list, datasets, method, args)
         
         # initialize c_i and c in SCAFFOLD
         self.c_i_params_list = torch.zeros((args.total_client, init_par_list.shape[0]))
@@ -18,7 +18,7 @@ class SCAFFOLD(Server):
             'Params_list': init_par_list.clone().detach(),
             'Local_VR_correction': torch.zeros((init_par_list.shape[0])),
         }
-        self.Client = scaffold
+        self.Client = fedgamma
         self.local_iteration = self.args.local_epochs * (self.datasets.client_x[0].shape[0] / self.args.batchsize)
         self.delta_c = torch.zeros((init_par_list.shape[0]))
         

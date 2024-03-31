@@ -1,5 +1,5 @@
 # FL-Simulator
-Pytorch implementations of some general federated optimization methods.
+Pytorch implementations of some general optimization methods in the federated learning community.
 
 ## Basic Methods
 
@@ -20,7 +20,11 @@ Client-level Momentum](https://arxiv.org/pdf/2106.10874.pdf)
 
 **FedSAM/MoFedSAM**: [Generalized Federated Learning via Sharpness Aware Minimization](https://proceedings.mlr.press/v162/qu22a/qu22a.pdf)
 
+**FedGamma**: [Fedgamma: Federated learning with global sharpness-aware minimization](https://ieeexplore.ieee.org/abstract/document/10269141)
+
 **FedSpeed**: [FedSpeed: Larger Local Interval, Less Communication Round, and Higher Generalization Accuracy](https://openreview.net/pdf?id=bZjxxYURKT)
+
+**FedSMOO**: [Dynamic Regularized Sharpness Aware Minimization in Federated Learning: Approaching Global Consistency and Smooth Landscape](https://proceedings.mlr.press/v202/sun23h.html)
 
 
 ## Usage
@@ -32,26 +36,28 @@ python train.py --non-iid --dataset CIFAR-10 --model ResNet18 --split-rule Diric
 ```
 Other hyperparameters are introduced in the train.py file.
 
-## How to create new?
+## How to implement your own method?
 
 FL-Simulator pre-define the basic Server class and Client class, which are executed according to the vanilla $FedAvg$ algorithm. If you want define a new method, you can define a new server file first with:
 
 - process_for_communication( ):
     
-        how your method preprocesses the communication variables
+        how your method pre-processes the variables for communication to each client 
+
+- postprocess( ):
+
+        how your method post-processes the received variables from each local client
 
 - global_update( ):
 
         how your method processes the update on the global model
 
-- postprocess( ):
+Then you can define a new client file or a new local optimizer for your own method to perform the local training.
 
-        how your method processes the received variables from local clients
 
-Then, you can define a new client file for this new method.
 
-## Experiments
-#### We train the ResNet-18-GN on the CIFAR-10 dataset and test the global model. 
+## Some Experiments
+#### We show some results of the ResNet-18-GN model on the CIFAR-10 dataset. The corresponding hyperparameters are here (To do).
 <p align="center">
 <table>
     <tbody align="center" valign="center">
@@ -153,6 +159,17 @@ Then, you can define a new client file for this new method.
             <td colspan="1"> 79.02 </td>
         </tr>
         <tr>
+            <td colspan="1"> FedGamma </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+        </tr>
+        <tr>
             <td colspan="1"> FedSpeed </td>
             <td colspan="1"> 87.72 </td>
             <td colspan="1"> 86.05 </td>
@@ -163,24 +180,51 @@ Then, you can define a new client file for this new method.
             <td colspan="1"> 83.94 </td>
             <td colspan="1"> 79.66 </td>
         </tr>
+        <tr>
+            <td colspan="1"> FedSMOO </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+        </tr>
     </tbody>
 </table>
 </p>
+
+**The blank parts are awaiting updates.**
 
 
 ## ToDo
 - [ ] Decentralized Implementation
 - [ ] Delayed / Asynchronous Implementation
+- [ ] Hyperparameter Logs
 - [x] Related Advances (Long-Term)
 
 
 ## Citation
-If this codebase can help you, please cite our paper [FedSpeed](https://arxiv.org/abs/2302.10429) (ICLR 2023):
+If this codebase can help you, please cite our papers: 
+
+[FedSpeed](https://arxiv.org/abs/2302.10429) (ICLR 2023):
 ```bibtex
 @article{sun2023fedspeed,
   title={Fedspeed: Larger local interval, less communication round, and higher generalization accuracy},
   author={Sun, Yan and Shen, Li and Huang, Tiansheng and Ding, Liang and Tao, Dacheng},
   journal={arXiv preprint arXiv:2302.10429},
   year={2023}
+}
+```
+[FedSMOO](https://proceedings.mlr.press/v202/sun23h.html) (ICML 2023 Oral):
+```bibtex
+@inproceedings{sun2023dynamic,
+  title={Dynamic regularized sharpness aware minimization in federated learning: Approaching global consistency and smooth landscape},
+  author={Sun, Yan and Shen, Li and Chen, Shixiang and Ding, Liang and Tao, Dacheng},
+  booktitle={International Conference on Machine Learning},
+  pages={32991--33013},
+  year={2023},
+  organization={PMLR}
 }
 ```

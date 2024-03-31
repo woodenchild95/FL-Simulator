@@ -42,5 +42,5 @@ class FedDyn(Server):
         return Averaged_model + torch.mean(self.h_params_list, dim=0)
     
     
-    def postprocess(self, client):
+    def postprocess(self, client, received_vecs):
         self.h_params_list[client] += self.clients_updated_params_list[client]

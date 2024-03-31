@@ -6,4 +6,6 @@ from .fedadam import fedadam
 from .fedprox import fedprox
 from .fedsam import fedsam
 from .mofedsam import mofedsam
+from .fedgamma import fedgamma
 from .fedspeed import fedspeed
+from .fedsmoo import fedsmoo

@@ -29,10 +29,12 @@ def set_client_from_params(device, model, params):
 
 
 
-def get_params_list_with_shape(model, param_list):
+def get_params_list_with_shape(model, param_list, device):
     vec_with_shape = []
     idx = 0
     for param in model.parameters():
         length = param.numel()
-        vec_with_shape.append(param_list[idx:idx + length].reshape(param.shape))
+        vec_with_shape.append(param_list[idx:idx + length].reshape(param.shape).to(device))
     return vec_with_shape
+
+

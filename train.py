@@ -19,16 +19,16 @@ print("##=============================================##")
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--dataset', choices=['CIFAR10', 'CIFAR100'], type=str, default='CIFAR10')             # select dataset
-parser.add_argument('--model', choices=['ResNet18'], type=str, default='ResNet18')                    # select model
+parser.add_argument('--model', choices=['LeNet', 'ResNet18'], type=str, default='ResNet18')                # select model
 parser.add_argument('--non-iid', action='store_true', default=False)                                       # activate if use heterogeneous dataset 
 parser.add_argument('--split-rule', choices=['Dirichlet', 'Pathological'], type=str, default='Dirichlet')  # select the dataset splitting rule
-parser.add_argument('--split-coef', default=0.1, type=float)                                                 # --> if Dirichlet: select the Dirichlet coefficient (i.e. 0.1, 0.3, 0.6, 1)
-                                                                                                             # --> if Pathological: select the Dirichlet coefficient (i.e. 3, 5)
-parser.add_argument('--active-ratio', default=0.05, type=float)                                              # select the partial participating ratio (i.e. 0.1, 0.05)
-parser.add_argument('--total-client', default=200, type=int)                                               # select the total number of clients (i.e. 100, 500)
+parser.add_argument('--split-coef', default=0.6, type=float)                                                  # --> if Dirichlet: select the Dirichlet coefficient (i.e. 0.1, 0.3, 0.6, 1)
+                                                                                                              # --> if Pathological: select the Dirichlet coefficient (i.e. 3, 5)
+parser.add_argument('--active-ratio', default=0.1, type=float)                                             # select the partial participating ratio (i.e. 0.1, 0.05)
+parser.add_argument('--total-client', default=100, type=int)                                               # select the total number of clients (i.e. 100, 500)
 parser.add_argument('--comm-rounds', default=1000, type=int)                                               # select the global communication rounds T
 parser.add_argument('--local-epochs', default=5, type=int)                                                 # select the local interval K
-parser.add_argument('--batchsize', default=25, type=int)                                                   # select the batchsize
+parser.add_argument('--batchsize', default=50, type=int)                                                   # select the batchsize
 parser.add_argument('--weight-decay', default=0.001, type=float)                                           # select the weight-decay (i.e. 0.01, 0.001)
 parser.add_argument('--local-learning-rate', default=0.1, type=float)                                      # select the local learning rate (generally 0.1 expect for local-adaptive-based)
 parser.add_argument('--global-learning-rate', default=1.0, type=float)                                     # select the global learning rate (generally 1.0 expect for global-adaptive-based)
@@ -41,7 +41,7 @@ parser.add_argument('--save-model', action='store_true', default=False)         
 parser.add_argument('--use-RI', action='store_true', default=False)                                        # activate if use relaxed initialization (RI)
 
 parser.add_argument('--alpha', default=0.1, type=float)                                                    # select the coefficient for client-momentum 
-parser.add_argument('--beta', default=0.1, type=float)                                                     # select the coefficient for relaxed initialization 
+parser.add_argument('--beta', default=0.1, type=float)                                                     # select the coefficient for relaxed initialization
 parser.add_argument('--beta1', default=0.9, type=float)                                                    # select the coefficient for the first-order momentum
 parser.add_argument('--beta2', default=0.99, type=float)                                                   # select the coefficient for the second-order momentum
 parser.add_argument('--lamb', default=0.1, type=float)                                                     # select the coefficient for the prox-term
@@ -50,7 +50,7 @@ parser.add_argument('--gamma', default=1.0, type=float)                         
 parser.add_argument('--epsilon', default=0.01, type=float)                                                 # select the minimal value for avoiding zero-division
 
 parser.add_argument('--method', choices=['FedAvg', 'FedCM', 'FedDyn', 'SCAFFOLD', 'FedAdam', 'FedProx', 'FedSAM', 'MoFedSAM', \
-                                         'FedSpeed'], type=str, default='FedAvg')
+                                         'FedGamma', 'FedSpeed', 'FedSMOO'], type=str, default='FedAvg')
                                          
 args = parser.parse_args()
 print(args)
@@ -111,8 +111,12 @@ if __name__=='__main__':
         server_func = FedSAM
     elif args.method == 'MoFedSAM':
         server_func = MoFedSAM
+    elif args.method == 'FedGamma':
+        server_func = FedGamma
     elif args.method == 'FedSpeed':
         server_func = FedSpeed
+    elif args.method == 'FedSMOO':
+        server_func = FedSMOO
     else:
         raise NotImplementedError('not implemented method yet')
     
