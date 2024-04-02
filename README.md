@@ -182,13 +182,13 @@ Then you can define a new client file or a new local optimizer for your own meth
         </tr>
         <tr>
             <td colspan="1"> FedSMOO </td>
+            <td colspan="1"> 87.70 </td>
+            <td colspan="1"> 86.87 </td>
+            <td colspan="1"> 86.04 </td>
+            <td colspan="1"> 83.30 </td>
             <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
+            <td colspan="1"> 85.97 </td>
+            <td colspan="1"> 85.14 </td>
             <td colspan="1">  </td>
         </tr>
     </tbody>
