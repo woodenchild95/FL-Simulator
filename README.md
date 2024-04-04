@@ -126,6 +126,17 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 78.23 </td>
         </tr>
         <tr>
+            <td colspan="1"> FedGamma </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+            <td colspan="1">  </td>
+        </tr>
+        <tr>
             <td colspan="1"> FedDyn </td>
             <td colspan="1"> 85.46 </td>
             <td colspan="1"> 84.22 </td>
@@ -159,22 +170,11 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 79.02 </td>
         </tr>
         <tr>
-            <td colspan="1"> FedGamma </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-        </tr>
-        <tr>
             <td colspan="1"> FedSpeed </td>
             <td colspan="1"> 87.31 </td>
-            <td colspan="1"> 86.51 </td>
-            <td colspan="1"> 85.69 </td>
-            <td colspan="1"> 82.56 </td>
+            <td colspan="1"> 86.33 </td>
+            <td colspan="1"> 85.39 </td>
+            <td colspan="1"> 82.26 </td>
             <td colspan="1"> 86.87 </td>
             <td colspan="1"> 85.07 </td>
             <td colspan="1"> 83.94 </td>
