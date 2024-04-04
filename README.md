@@ -172,9 +172,9 @@ Then you can define a new client file or a new local optimizer for your own meth
         <tr>
             <td colspan="1"> FedSpeed </td>
             <td colspan="1"> 87.31 </td>
-            <td colspan="1"> 86.05 </td>
-            <td colspan="1"> 85.25 </td>
-            <td colspan="1"> 82.05 </td>
+            <td colspan="1"> 86.51 </td>
+            <td colspan="1"> 85.69 </td>
+            <td colspan="1"> 82.56 </td>
             <td colspan="1"> 86.87 </td>
             <td colspan="1"> 85.07 </td>
             <td colspan="1"> 83.94 </td>
