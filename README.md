@@ -57,7 +57,7 @@ Then you can define a new client file or a new local optimizer for your own meth
 
 
 ## Some Experiments
-#### We show some results of the ResNet-18-GN model on the CIFAR-10 dataset. The corresponding hyperparameters are here (To do).
+#### We show some results of the ResNet-18-GN model on the CIFAR-10 dataset. The corresponding hyperparameters are stated in the following.
 <p align="center">
 <table>
     <tbody align="center" valign="center">
@@ -195,13 +195,121 @@ Then you can define a new client file or a new local optimizer for your own meth
 </table>
 </p>
 
-**The blank parts are awaiting updates.**
+The blank parts are awaiting updates.
 
+**Some key hyparameters selection**
+<p align="center">
+<table>
+    <tbody align="center" valign="center">
+        <tr>
+            <td colspan="1">  </td>
+            <td colspan="1"> local Lr </td>
+            <td colspan="1"> global Lr </td>
+            <td colspan="1"> Lr decay </td>
+            <td colspan="1"> SAM Lr </td>
+            <td colspan="1"> proxy coefficient </td>
+            <td colspan="1"> client-momentum coefficiet </td>
+        </tr>
+        <tr>
+            <td colspan="1"> FedAvg </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> 1.0 </td>
+            <td colspan="1"> 0.998 </td>
+            <td colspan="1"> - </td>
+            <td colspan="1"> - </td>
+            <td colspan="1"> - </td>
+        </tr>
+        <tr>
+            <td colspan="1"> FedProx </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> 1.0 </td>
+            <td colspan="1"> 0.998 </td>
+            <td colspan="1"> - </td>
+            <td colspan="1"> 0.1 / 0.01 </td>
+            <td colspan="1"> - </td>
+        </tr>
+        <tr>
+            <td colspan="1"> FedAdam </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> 0.1 / 0.05 </td>
+            <td colspan="1"> 0.998 </td>
+            <td colspan="1"> - </td>
+            <td colspan="1"> - </td>
+            <td colspan="1"> - </td>
+        </tr>
+        <tr>
+            <td colspan="1"> SCAFFOLD </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> 1.0 </td>
+            <td colspan="1"> 0.998 </td>
+            <td colspan="1"> - </td>
+            <td colspan="1"> - </td>
+            <td colspan="1"> - </td>
+        </tr>
+        <tr>
+            <td colspan="1"> FedGamma </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> 1.0 </td>
+            <td colspan="1"> 0.998 </td>
+            <td colspan="1"> 0.01 </td>
+            <td colspan="1"> - </td>
+            <td colspan="1"> - </td>
+        </tr>
+        <tr>
+            <td colspan="1"> FedDyn </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> 1.0 </td>
+            <td colspan="1"> 0.9995 / 1.0 </td>
+            <td colspan="1"> - </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> - </td>
+        </tr>
+        <tr>
+            <td colspan="1"> FedCM </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> 1.0 </td>
+            <td colspan="1"> 0.998 </td>
+            <td colspan="1"> - </td>
+            <td colspan="1"> - </td>
+            <td colspan="1"> 0.1 </td>
+        </tr>
+        <tr>
+            <td colspan="1"> MoFedSAM </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> 1.0 </td>
+            <td colspan="1"> 0.998 </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> - </td>
+            <td colspan="1"> 0.05 / 0.1 </td>
+        </tr>
+        <tr>
+            <td colspan="1"> FedSpeed </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> 1.0 </td>
+            <td colspan="1"> 0.998 </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> - </td>
+        </tr>
+        <tr>
+            <td colspan="1"> FedSMOO </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> 1.0 </td>
+            <td colspan="1"> 0.998 </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> - </td>
+        </tr>
+    </tbody>
+</table>
+</p>
+
+The hyperparameter selections above are for reference only. Each algorithm has unique properties to match the corresponding hyperparameters. In order to facilitate a relatively fair comparison, we report a set of selections that each method can perform well in general cases. Please adjust the hyperparameters according to changes in the different model backbones and datasets.
 
 ## ToDo
 - [ ] Decentralized Implementation
 - [ ] Delayed / Asynchronous Implementation
-- [ ] Hyperparameter Logs
+- [x] Hyperparameter Selections
 - [x] Related Advances (Long-Term)
 
 
