@@ -82,6 +82,10 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> Dir-0.1 </td>
         </tr>
         <tr>
+            <td colspan="1">   </td>
+            <td colspan="8"> SGD basis </td>
+        </tr>
+        <tr>
             <td colspan="1"> FedAvg </td>
             <td colspan="1"> 82.52 </td>
             <td colspan="1"> 80.65 </td>
@@ -126,17 +130,6 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 78.23 </td>
         </tr>
         <tr>
-            <td colspan="1"> FedGamma </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-            <td colspan="1">  </td>
-        </tr>
-        <tr>
             <td colspan="1"> FedDyn </td>
             <td colspan="1"> 85.46 </td>
             <td colspan="1"> 84.22 </td>
@@ -157,6 +150,21 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 82.01 </td>
             <td colspan="1"> 80.77 </td>
             <td colspan="1"> 75.91 </td>
+        </tr>
+        <tr>
+            <td colspan="1">   </td>
+            <td colspan="8"> SAM basis </td>
+        </tr>
+        <tr>
+            <td colspan="1"> FedGamma </td>
+            <td colspan="1"> 85.74 </td>
+            <td colspan="1"> 84.80 </td>
+            <td colspan="1"> 83.81 </td>
+            <td colspan="1"> 80.72 </td>
+            <td colspan="1"> 84.99 </td>
+            <td colspan="1"> 84.02 </td>
+            <td colspan="1"> 83.03 </td>
+            <td colspan="1"> 80.09 </td>
         </tr>
         <tr>
             <td colspan="1"> MoFedSAM </td>
