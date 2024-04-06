@@ -255,15 +255,6 @@ The blank parts are awaiting updates.
             <td colspan="1"> - </td>
         </tr>
         <tr>
-            <td colspan="1"> FedGamma </td>
-            <td colspan="1"> 0.1 </td>
-            <td colspan="1"> 1.0 </td>
-            <td colspan="1"> 0.998 </td>
-            <td colspan="1"> 0.01 </td>
-            <td colspan="1"> - </td>
-            <td colspan="1"> - </td>
-        </tr>
-        <tr>
             <td colspan="1"> FedDyn </td>
             <td colspan="1"> 0.1 </td>
             <td colspan="1"> 1.0 </td>
@@ -280,6 +271,15 @@ The blank parts are awaiting updates.
             <td colspan="1"> - </td>
             <td colspan="1"> - </td>
             <td colspan="1"> 0.1 </td>
+        </tr>
+        <tr>
+            <td colspan="1"> FedGamma </td>
+            <td colspan="1"> 0.1 </td>
+            <td colspan="1"> 1.0 </td>
+            <td colspan="1"> 0.998 </td>
+            <td colspan="1"> 0.01 </td>
+            <td colspan="1"> - </td>
+            <td colspan="1"> - </td>
         </tr>
         <tr>
             <td colspan="1"> MoFedSAM </td>
