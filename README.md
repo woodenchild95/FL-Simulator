@@ -40,19 +40,13 @@ Other hyperparameters are introduced in the train.py file.
 
 FL-Simulator pre-define the basic Server class and Client class, which are executed according to the vanilla $FedAvg$ algorithm. If you want define a new method, you can define a new server file first with:
 
-- process_for_communication( ):
-    
-        how your method pre-processes the variables for communication to each client 
+- **process_for_communication( ):** how your method pre-processes the variables for communication to each client 
 
-- postprocess( ):
+- **postprocess( ):** how your method post-processes the received variables from each local client
 
-        how your method post-processes the received variables from each local client
+- **global_update( ):** how your method processes the update on the global model
 
-- global_update( ):
-
-        how your method processes the update on the global model
-
-Then you can define a new client file or a new local optimizer for your own method to perform the local training.
+Then you can define a new client file or a new local optimizer for your own method to perform the local training. Similarly, you can directly define a new server class to rebuild the inner-operations.
 
 
 
