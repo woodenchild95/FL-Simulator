@@ -87,12 +87,12 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 80.65 </td>
             <td colspan="1"> 79.75 </td>
             <td colspan="1"> 77.31 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 15.86s </td>
             <td colspan="1"> 81.09 </td>
             <td colspan="1"> 79.93 </td>
             <td colspan="1"> 78.66 </td>
             <td colspan="1"> 75.21 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 17.03s </td>
         </tr>
         <tr>
             <td colspan="1"> FedProx </td>
@@ -100,12 +100,12 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 81.05 </td>
             <td colspan="1"> 79.52 </td>
             <td colspan="1"> 76.86 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 19.78s </td>
             <td colspan="1"> 81.56 </td>
             <td colspan="1"> 79.49 </td>
             <td colspan="1"> 78.76 </td>
             <td colspan="1"> 75.84 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 20.97s </td>
         </tr>
         <tr>
             <td colspan="1"> FedAdam </td>
@@ -113,12 +113,12 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 82.56 </td>
             <td colspan="1"> 82.12 </td>
             <td colspan="1"> 77.58 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 15.91s </td>
             <td colspan="1"> 83.29 </td>
             <td colspan="1"> 81.22 </td>
             <td colspan="1"> 80.22 </td>
             <td colspan="1"> 75.83 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 17.67s </td>
         </tr>
         <tr>
             <td colspan="1"> SCAFFOLD </td>
@@ -126,12 +126,12 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 83.53 </td>
             <td colspan="1"> 82.75 </td>
             <td colspan="1"> 79.92 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 20.09s </td>
             <td colspan="1"> 84.24 </td>
             <td colspan="1"> 83.01 </td>
             <td colspan="1"> 82.04 </td>
             <td colspan="1"> 78.23 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 22.21s </td>
         </tr>
         <tr>
             <td colspan="1"> FedDyn </td>
@@ -139,12 +139,12 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 84.22 </td>
             <td colspan="1"> 83.22 </td>
             <td colspan="1"> 78.96 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 20.82s </td>
             <td colspan="1"> 81.11 </td>
             <td colspan="1"> 80.25 </td>
             <td colspan="1"> 79.43 </td>
             <td colspan="1"> 75.43 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 22.68s </td>
         </tr>
         <tr>
             <td colspan="1"> FedCM </td>
@@ -152,12 +152,12 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 83.81 </td>
             <td colspan="1"> 83.44 </td>
             <td colspan="1"> 78.92 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 20.74s </td>
             <td colspan="1"> 83.77 </td>
             <td colspan="1"> 82.01 </td>
             <td colspan="1"> 80.77 </td>
             <td colspan="1"> 75.91 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 21.24s </td>
         </tr>
         <tr>
             <td colspan="1">   </td>
@@ -169,12 +169,12 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 84.80 </td>
             <td colspan="1"> 83.81 </td>
             <td colspan="1"> 80.72 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 30.13s </td>
             <td colspan="1"> 84.99 </td>
             <td colspan="1"> 84.02 </td>
             <td colspan="1"> 83.03 </td>
             <td colspan="1"> 80.09 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 33.63s </td>
         </tr>
         <tr>
             <td colspan="1"> MoFedSAM </td>
@@ -182,12 +182,12 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 85.74 </td>
             <td colspan="1"> 85.14 </td>
             <td colspan="1"> 81.58 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 29.06s </td>
             <td colspan="1"> 86.27 </td>
             <td colspan="1"> 84.71 </td>
             <td colspan="1"> 83.44 </td>
             <td colspan="1"> 79.02 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 32.45s </td>
         </tr>
         <tr>
             <td colspan="1"> FedSpeed </td>
@@ -195,12 +195,12 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 86.33 </td>
             <td colspan="1"> 85.39 </td>
             <td colspan="1"> 82.26 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 29.48s </td>
             <td colspan="1"> 86.87 </td>
             <td colspan="1"> 85.07 </td>
             <td colspan="1"> 83.94 </td>
             <td colspan="1"> 79.66 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 33.69s </td>
         </tr>
         <tr>
             <td colspan="1"> FedSMOO </td>
@@ -208,12 +208,12 @@ Then you can define a new client file or a new local optimizer for your own meth
             <td colspan="1"> 86.87 </td>
             <td colspan="1"> 86.04 </td>
             <td colspan="1"> 83.30 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 30.43s </td>
             <td colspan="1"> 87.40 </td>
             <td colspan="1"> 85.97 </td>
             <td colspan="1"> 85.14 </td>
             <td colspan="1"> 81.35 </td>
-            <td colspan="1">   </td>
+            <td colspan="1"> 34.80s </td>
         </tr>
     </tbody>
 </table>
