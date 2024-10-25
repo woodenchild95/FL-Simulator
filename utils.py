@@ -35,6 +35,7 @@ def get_params_list_with_shape(model, param_list, device):
     for param in model.parameters():
         length = param.numel()
         vec_with_shape.append(param_list[idx:idx + length].reshape(param.shape).to(device))
+        idx += length
     return vec_with_shape
 
 
