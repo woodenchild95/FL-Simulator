@@ -331,8 +331,6 @@ The blank parts are awaiting updates.
 The hyperparameter selections above are for reference only. Each algorithm has unique properties to match the corresponding hyperparameters. In order to facilitate a relatively fair comparison, we report a set of selections that each method can perform well in general cases. Please adjust the hyperparameters according to changes in the different model backbones and datasets.
 
 ## ToDo
-- [ ] Decentralized Implementation
-- [ ] Delayed / Asynchronous Implementation
 - [x] Hyperparameter Selections
 - [x] Related Advances (Long-Term)
 
